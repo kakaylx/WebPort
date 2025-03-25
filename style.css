@@ -9,7 +9,7 @@ body{
 
 nav {
     align-items: center; 
-    background-color: #ffffff; 
+    background-color: #FAF9F6; 
     color: white; 
     display: flex; 
     justify-content: center; 
@@ -187,7 +187,7 @@ img{
 }
 
 .social-icons a {
-    color: #ffffff;
+    color: #f3d7d4;
     text-decoration: none;
     gap: 20px;
     margin: 0 10px;
@@ -203,12 +203,95 @@ img{
 }
 
 .social-icons a:focus,
-.social-icons a:active,
-.social-icons a:visited {
+.social-icons a:active
+{
     background-color: inherit; /* Keeps hover or original state */
-    color: #f3d7d4;
+    color: inherit;
     outline: none;
     box-shadow: none;
 }
 
+#con {
+    text-align: center; 
+    padding: 50px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0%;
+    gap: 30px;
+
+}
+
+.pbox {
+    text-align: center; 
+    align-content: center;
+    padding: 50px; 
+    display: block; /* Ensures vertical stacking */
+}
+
+.box {
+    width: 700px;
+    height: 400px;
+    background-color: #f3d7d4;
+    margin-top: 20px; /* Adds gap between text and box */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: block;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+    transition: all 0.3s ease-in-out;
+}
+
+.box:hover {
+    background-color: #f3bcb8;
+    transform: scale3d(1.1, 1.1, 1);
+    transition: all 0.3s ease-in-out;
+}
+
+.box h3{
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.box2 {
+    width: 360px;
+    height: 200px;
+    margin-top: 30px;
+    margin-left: 30px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.box2:hover {
+    transform: scale3d(1.1, 1.1, 1);
+    transition: all 0.3s ease-in-out;
+}
+
+.boxc{
+    align-content: center;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-style: oblique;
+    font-size: large;
+    color: #4b1f1f;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.picbox{
+    width: 700px;
+    height: 400px;
+    margin-top: 30px;
+    margin-left: 30px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.picbox:hover {
+    transform: scale3d(1.1, 1.1, 1);
+    transition: all 0.3s ease-in-out;
+}
 
