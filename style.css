@@ -47,6 +47,8 @@ nav a:hover{
     margin-top: 0%;
     margin-bottom: 0%;
     font-size: 280px;
+    animation: fadeUp 2s ease-in-out forwards;
+    animation-delay: 1s;
 }
 
 .k{
@@ -57,6 +59,8 @@ nav a:hover{
     margin-bottom: 0%;
     font-size: 130px;
     font-family: 'Montserat', 'sans-serif';
+    animation: fadeUp 2s ease-in-out forwards;
+    animation-delay: 1s;
 }
 
 img{
@@ -73,6 +77,8 @@ img{
     object-fit: cover;
     opacity: 0.9;
     z-index: 1;
+    animation: fadeUp 2s ease-in-out forwards;
+    animation-delay: 1s;
 }
 
 .text-container {
@@ -135,6 +141,7 @@ img{
     font-size: 20px;
     font-weight: bold;
     color: #333;
+    z-index: 2;
 
 }
 
@@ -142,10 +149,12 @@ img{
     width: 500px;
     height: 200px;
     color: #ffffff;
-    margin-top: -100px; /* Negative value to lift the element */
+    margin-top: -260px; /* Negative value to lift the element */
     margin-bottom: 0;
     text-align: center;
     display: block;
+    animation: fadeUp 3s ease-in-out forwards;
+    animation-delay: 1s;
 }
 
 
@@ -154,7 +163,7 @@ img{
     height: 200px;       /* Set the height of the image */
     border-radius: 50%;  /* This makes the image circular */
     object-fit: cover; 
-    margin-top: 0%;
+    margin-top: 0;
     margin-bottom: 10px;
 }
 
@@ -184,6 +193,7 @@ img{
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index: 2;
 }
 
 .social-icons a {
@@ -217,8 +227,7 @@ img{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 0%;
-    gap: 30px;
+    margin-top: 0;
 
 }
 
@@ -233,7 +242,8 @@ img{
     width: 700px;
     height: 400px;
     background-color: #f3d7d4;
-    margin-top: 20px; /* Adds gap between text and box */
+    margin-top: 20px; 
+    margin-bottom: 10px;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -245,11 +255,33 @@ img{
     transition: all 0.3s ease-in-out;
 }
 
-.box:hover {
-    background-color: #f3bcb8;
-    transform: scale3d(1.1, 1.1, 1);
-    transition: all 0.3s ease-in-out;
+.about-me, .favorite-songs {
+    flex: 1;
+    padding: 20px;
+    background-color: none;
+    min-width: 200px;
 }
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .about-me, .favorite-songs {
+        width: 100%;
+    }
+}
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 800px;
+    height: 200px;
+}
+
 
 .box h3{
     margin-bottom: 10px;
@@ -257,41 +289,127 @@ img{
 }
 
 .box2 {
-    width: 360px;
+    flex: 1 1 150px;
     height: 200px;
-    margin-top: 30px;
-    margin-left: 30px;
+    margin: 5px;
+    min-width: 150px;
+    max-width: 360px;
+    object-fit: cover;
+    opacity: 0.3;
+    transition: all 0.5s ease;
     border-radius: 10px;
-    transition: all 0.3s ease-in-out;
+    background-color: #ccc;
 }
 
+
 .box2:hover {
+    flex: 1 1 450px;
+    opacity: 1;
     transform: scale3d(1.1, 1.1, 1);
     transition: all 0.3s ease-in-out;
 }
 
 .boxc{
+    display: block;
     align-content: center;
     text-align: center;
-    margin-top: 5px;
-    margin-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#p{
+    text-align: center;
     font-style: oblique;
-    font-size: large;
     color: #4b1f1f;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.galleryp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 1200px;
+    height: 300px;
 }
 
 .picbox{
-    width: 700px;
-    height: 400px;
+    width: 200px;
+    height: 450px;
     margin-top: 30px;
-    margin-left: 30px;
+    margin-left: 1px;
     border-radius: 10px;
+    opacity: 0.2;
     transition: all 0.3s ease-in-out;
 }
 
 .picbox:hover {
+    flex: 1 1 650px;
+    opacity: 2;
     transform: scale3d(1.1, 1.1, 1);
     transition: all 0.3s ease-in-out;
+}
+
+.scroll-section:nth-child(2):hover .overlay-image,
+    footer:hover + .overlay-image {
+      animation: fadeUp 1.5s ease-in-out forwards;
+    }
+
+    /* Keyframe Animation */
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #FAF9F6;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      width: 100%;
+      padding: 10px;
+      z-index: 1;
+    }
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(145deg, #4caf50, #81c784);
+    width: 0;
+    border-radius: 15px;
+    transition: width 0.4s ease-in-out;
+}
+
+progress {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+/* Filled Portion Style */
+progress::-webkit-progress-value {
+    background: linear-gradient(145deg, #762c3b, #762c3b);
+    border-radius: 10px;
+    transition: width 0.4s ease-in-out;
 }
 
